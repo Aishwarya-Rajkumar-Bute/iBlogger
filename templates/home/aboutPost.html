@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} About {% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
+{% block body %}
+<div class="container my-3">
+<div class="about-post">
+        <h2 class="about-post-title">{{aboutpost.author}}</h2>
+        {% comment %} <p class="about-post-meta">{{aboutpost.timeStamp}} <a href="/about">{{aboutpost.author}}</a></p> {% endcomment %}
+        <p>{{aboutpost.content}}}</p>
+        <hr>
+</div>  
+</div>        
+{% endblock body %}

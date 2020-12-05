@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %} About {% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
+{% block body %}
+<div class="container my-3">
+  <h2>Information about Authors</h2>
+  {% for aboutpost in allAbouts%}
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">{{aboutpost.author}}</strong>
+        
+        <p class="card-text mb-auto">
+          {{aboutpost.content| truncatechars:500}}
+        </p>
+        <div class="my-2">
+         <p class="lead my-3">Please click on the below button to give some love to {{aboutpost.author}}'s posts by continue reading {{aboutpost.author}}'s posts</p>
+        <a href="/blog/" role="button" class="btn btn-primary">Continue reading</a>
+        </div>
+      </div>
+      <div class="col-auto d-none d-lg-block"></div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock body %}
